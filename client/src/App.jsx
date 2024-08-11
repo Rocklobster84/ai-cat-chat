@@ -5,6 +5,7 @@ function App() {
   const [llmResponse, setLlmResponse] = useState('');
   const [catType, setCatType] = useState('');
   const [question, setQuestion] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   let llmResponseProgress = '';
 
@@ -21,7 +22,28 @@ function App() {
     setQuestion(event.target.value);
   };
 
+  const validateCatSelection = () => {
+    if (!catType) {
+      setErrorMessage('Please select a cat type!');
+      return false;
+    }
+    return true;
+  };
+
+  const validateQuestionSelection = () => {
+    if (!question) {
+      setErrorMessage('Please ask a question!');
+      return false;
+    }
+    return true;
+  };
+
   const fetchData = async () => {
+    if (!validateCatSelection()) {
+      console.log('Form submitted with cat type:', catType);
+    } else if (!validateQuestionSelection()) {
+      console.log('Form submitted with question:', question);
+    } else {
     const url = `http://localhost:3000?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
     const response = await fetch(url);
 
@@ -38,6 +60,7 @@ function App() {
         return;
       }
     }
+  }
   };
 
   return (
@@ -54,7 +77,8 @@ function App() {
             value="black cat"
             checked={catType === 'black cat'}
             onChange={handleCatTypeChange}
-            name="cat"/><span>Black Cat</span>
+            name="cat"
+          /><span>Black Cat</span>
         </label>
       </div>
       <div id="ck-button">
@@ -135,6 +159,7 @@ function App() {
       <p>
         <input id="question" name="question" required size="30" onChange={handleQuestionChange}/>
       </p>
+      {errorMessage && <h3 className="error">{errorMessage}</h3>}
       <button onClick={fetchData}>
           Submit
       </button>
