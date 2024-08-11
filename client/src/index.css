@@ -58,8 +58,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-textarea {
+input {
   border-radius: 8px;
+  color: black;
   background-color: white;
   border: 1px solid #141414;
   padding: 0.6em 1.2em;
@@ -71,6 +72,62 @@ textarea {
   width: 100%;
 }
 
+#ck-button {
+    background-color:#2a9d8f;
+    border-radius:8px;
+    overflow:hidden;
+    width: 25%;
+    display: inline-block;
+}
+
+#ck-button label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #2a9d8f;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+#ck-button label span {
+    text-align:center;
+    padding:0px 0px;
+    display:block;
+}
+
+#ck-button label input {
+    position:absolute;
+    top:-20px;
+    left: -9999px;
+}
+#ck-button:checked {
+  background-color: #e76f51;
+}
+#ck-button input:checked {
+  background-color: #e76f51;
+}
+#ck-button input:checked + label {
+  background-color:#e76f51;
+  color:#fff;
+}
+#ck-button input:checked + span {
+  background-color:#e76f51;
+  color:#fff;
+}
+#ck-button:hover {
+    background:#e76f51;
+}
+label:checked {
+  background-color: #e76f51;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

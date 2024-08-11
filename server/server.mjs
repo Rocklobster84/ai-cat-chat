@@ -1,5 +1,6 @@
 import express from 'express';
-
+import http from 'http';
+import url from 'url';
 import { HNSWLib } from '@langchain/community/vectorstores/hnswlib';
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import cors from 'cors';
@@ -23,6 +24,9 @@ const loadedVectorStore = await HNSWLib.load(
 const retriever = loadedVectorStore.asRetriever(1);
 
 app.get('/', async (request, response) => {
+  const queryObject = url.parse(request.url, true).query;
+  const catType = queryObject.catType || 'black cat';
+  const question = queryObject.question || 'how to bake a cake';
   const prompt = ChatPromptTemplate.fromMessages([
     [
       'ai',
@@ -61,8 +65,8 @@ app.get('/', async (request, response) => {
     .pipe(outputParser);
   
   const stream = await chain.stream(
-    'From the prospective of a siamese cat can you tell me' +
-    'how to bake a cake?');
+    `From the perspective of a ${catType}, can you tell me ${question}?`
+  );
 
   for await (const chunk of stream) {
     if (chunk) {
