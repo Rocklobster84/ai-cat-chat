@@ -15,7 +15,9 @@ function App() {
 
   const fetchData = async () => {
     const url = 'http://localhost:3000';
-    const response = await fetch(url);
+    const catType = document.activeElement.textContent;
+    const value = document.getElementById('question').value;
+    const response = await fetch(url, catType, value);
 
     const reader = response.body
       .pipeThrough(new TextDecoderStream())
@@ -34,26 +36,42 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>Cat Chat</h1>
       <div className="card">
-      <button onClick={fetchData}>
-          fetch
+        <button onClick={fetchData}>
+          Black Cat
         </button>
-        <p>
-          {llmResponse}
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        <button onClick={fetchData}>
+          Siamese Cat
+        </button>
+        <button onClick={fetchData}>
+          Calico Cat
+        </button>
+        <button onClick={fetchData}>
+          Maine Coon Cat
+        </button>
+        <button onClick={fetchData}>
+          Orange Cat
+        </button>
+        <button onClick={fetchData}>
+          Persian Cat
+        </button>
+        <button onClick={fetchData}>
+          Tabby Cat
+        </button>
+        <button onClick={fetchData}>
+          Torti Cat
+        </button>
+      <h2>
+        "Meow, ask me a question."
+      </h2>
+      <p>
+        <textarea id="question" name="question" required size="30"/>
       </p>
+      <p>
+        {llmResponse}
+      </p>
+      </div>
     </>
   )
 }
