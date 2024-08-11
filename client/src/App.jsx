@@ -17,6 +17,10 @@ function App() {
     setCatType(event.target.value);
   };
 
+  const handleQuestionChange = (event) => {
+    setQuestion(event.target.value);
+  };
+
   const fetchData = async () => {
     const url = `http://localhost:3000?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
     const response = await fetch(url);
@@ -41,6 +45,7 @@ function App() {
       <h1>Cat Chat</h1>
       <div className="card">
       <h2>Choose a Cat Type:</h2>
+      <img src="./public/orange-cat-clear.png" />
       <div className="row">
       <div id="ck-button" className="ck-button">
         <label>
@@ -128,7 +133,7 @@ function App() {
         "Meow, ask me a question."
       </h2>
       <p>
-        <input id="question" name="question" required size="30"/>
+        <input id="question" name="question" required size="30" onChange={handleQuestionChange}/>
       </p>
       <button onClick={fetchData}>
           Submit

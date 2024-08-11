@@ -25,8 +25,8 @@ const retriever = loadedVectorStore.asRetriever(1);
 
 app.get('/', async (request, response) => {
   const queryObject = url.parse(request.url, true).query;
-  const catType = queryObject.catType || 'black cat';
-  const question = queryObject.question || 'how to bake a cake';
+  const catType = queryObject.catType;
+  const question = queryObject.question;
   const prompt = ChatPromptTemplate.fromMessages([
     [
       'ai',

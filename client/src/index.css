@@ -33,9 +33,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 0;
 }
 h2 {
   margin-top: 50px;
+}
+img {
+  width: 30%;
 }
 button {
   border-radius: 8px;
@@ -126,7 +130,7 @@ label:checked {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 20px;
 }
 @media (prefers-color-scheme: light) {
   :root {
