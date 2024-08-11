@@ -1,0 +1,21 @@
+{
+  "name": "cat-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/community": "^0.0.34",
+    "@langchain/openai": "^0.0.14",
+    "cat-chat": "file:",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "hnswlib-node": "^1.4.2",
+    "langchain": "^0.1.22"
+  }
+}
