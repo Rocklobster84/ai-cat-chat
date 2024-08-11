@@ -4,6 +4,7 @@ import './App.css'
 function App() {
   const [llmResponse, setLlmResponse] = useState('');
   const [catType, setCatType] = useState('');
+  const [catImage, setCatImage] = useState('./public/black-cat.webp');
   const [question, setQuestion] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -15,7 +16,38 @@ function App() {
   };
 
   const handleCatTypeChange = (event) => {
-    setCatType(event.target.value);
+    const selectedCatType = event.target.value;
+    setCatType(selectedCatType);
+
+    // Update the image source based on the selected cat type
+    switch (selectedCatType) {
+      case 'black cat':
+        setCatImage('./public/black-cat.webp');
+        break;
+      case 'orange cat':
+        setCatImage('./public/orange-cat-clear.png');
+        break;
+      case 'calico cat':
+        setCatImage('./public/calico-cat.png');
+        break;
+      case 'maine coon cat':
+        setCatImage('./public/maine-coon-cat.png');
+        break;
+      case 'persian cat':
+        setCatImage('./public/persian-cat.png');
+        break;
+      case 'siamese cat':
+        setCatImage('./public/siamese-cat.png');
+        break;
+      case 'tabby cat':
+        setCatImage('./public/tabby-cat.png');
+        break;
+      case 'tortoise shell cat':
+        setCatImage('./public/torti-cat.png');
+        break;
+      default:
+        setCatImage('./public/black-cat.webp');
+    }
   };
 
   const handleQuestionChange = (event) => {
@@ -68,7 +100,7 @@ function App() {
       <h1>Cat Chat</h1>
       <div className="card">
       <h2>Choose a Cat Type:</h2>
-      <img src="./public/orange-cat-clear.png" />
+      <img src={catImage} alt="Cat" />
       <div className="row">
       <div id="ck-button" className="ck-button">
         <label>
