@@ -161,4 +161,7 @@ label:checked {
     width: 100%;
     margin-bottom: 10px;
   }
+  .input#question {
+    width: 40%;
+  }
 }
