@@ -52,6 +52,7 @@ function App() {
 
   const handleQuestionChange = (event) => {
     setQuestion(event.target.value);
+    setErrorMessage('');
   };
 
   const validateCatSelection = () => {
@@ -70,12 +71,23 @@ function App() {
     return true;
   };
 
+  const handleReset = () => {
+    setCatType('');
+    setCatImage('/orange-cat.png');
+    setQuestion('');
+    setLlmResponse('');
+    setErrorMessage('');
+  };
+
   const fetchData = async () => {
     if (!validateCatSelection()) {
       console.log('Form submitted with cat type:', catType);
-    } else if (!validateQuestionSelection()) {
+    } 
+    else if (!validateQuestionSelection()) {
       console.log('Form submitted with question:', question);
-    } else {
+    } 
+    else {
+
     const url = `http://localhost:3000?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
     const response = await fetch(url);
 
@@ -97,7 +109,8 @@ function App() {
 
   return (
     <>
-      <h1>Cat Chat</h1>
+      <h1>AI Cat Chat</h1>
+      <p>Welcome to Cat Chat. Your friendly AI cat ready to answer all of your questions.</p>
       <div className="card">
       <h2>Choose a Cat Type:</h2>
       <img src={catImage} alt="Cat" />
@@ -189,12 +202,15 @@ function App() {
         "Meow, ask me a question."
       </h2>
       <p>
-        <input id="question" name="question" required size="30" onChange={handleQuestionChange}/>
+        <input id="question" name="question" required size="30" value={question} onChange={handleQuestionChange}/>
       </p>
       {errorMessage && <h3 className="error">{errorMessage}</h3>}
       <button onClick={fetchData}>
           Submit
       </button>
+      <button onClick={handleReset}>
+            Reset
+        </button>
       <p>
         {llmResponse}
       </p>
