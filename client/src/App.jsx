@@ -4,7 +4,7 @@ import './App.css'
 function App() {
   const [llmResponse, setLlmResponse] = useState('');
   const [catType, setCatType] = useState('');
-  const [catImage, setCatImage] = useState('./public/black-cat.webp');
+  const [catImage, setCatImage] = useState('/orange-cat.png');
   const [question, setQuestion] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -22,31 +22,31 @@ function App() {
     // Update the image source based on the selected cat type
     switch (selectedCatType) {
       case 'black cat':
-        setCatImage('./public/black-cat.webp');
+        setCatImage('/black-cat.png');
         break;
       case 'orange cat':
-        setCatImage('./public/orange-cat-clear.png');
+        setCatImage('/orange-cat.png');
         break;
       case 'calico cat':
-        setCatImage('./public/calico-cat.png');
+        setCatImage('/calico-cat.png');
         break;
       case 'maine coon cat':
-        setCatImage('./public/maine-coon-cat.png');
+        setCatImage('/maine-coon-cat.png');
         break;
       case 'persian cat':
-        setCatImage('./public/persian-cat.png');
+        setCatImage('/persian-cat.png');
         break;
       case 'siamese cat':
-        setCatImage('./public/siamese-cat.png');
+        setCatImage('/Siamese-cat.png');
         break;
       case 'tabby cat':
-        setCatImage('./public/tabby-cat.png');
+        setCatImage('/tabby-cat.png');
         break;
       case 'tortoise shell cat':
-        setCatImage('./public/torti-cat.png');
+        setCatImage('/torti-cat.png');
         break;
       default:
-        setCatImage('./public/black-cat.webp');
+        setCatImage('/orange-cat.png');
     }
   };
 
