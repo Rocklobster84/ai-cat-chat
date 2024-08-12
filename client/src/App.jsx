@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
@@ -8,6 +8,15 @@ function App() {
   const [question, setQuestion] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (llmResponse) {
+      const element = document.getElementById('llmresponse');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [llmResponse]);
 
   let llmResponseProgress = '';
 
@@ -216,11 +225,13 @@ function App() {
       <button onClick={handleReset}>
             Reset
         </button>
-        {isLoading ? (
-        <div className="spinner">Loading...</div> // Loading spinner
-        ) : (
+        <div id="llmresponse" className="llmresponse">
+          {isLoading ? (
+          <div className="spinner">Loading...</div> // Loading spinner
+          ) : (
           <p>{llmResponse}</p>
         )}
+        </div>
       </div>
     </>
   )
