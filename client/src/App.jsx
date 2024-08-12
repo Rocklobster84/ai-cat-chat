@@ -7,6 +7,7 @@ function App() {
   const [catImage, setCatImage] = useState('/orange-cat.png');
   const [question, setQuestion] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   let llmResponseProgress = '';
 
@@ -77,6 +78,7 @@ function App() {
     setQuestion('');
     setLlmResponse('');
     setErrorMessage('');
+    setIsLoading(false);
   };
 
   const fetchData = async () => {
@@ -88,6 +90,8 @@ function App() {
     } 
     else {
 
+    setIsLoading(true);
+ 
     const url = `http://localhost:3000?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
     const response = await fetch(url);
 
@@ -97,15 +101,16 @@ function App() {
 
     while (true) {
       const { done, value } = await reader.read();
-      
+      setIsLoading(false);
       renderResponseChunk(value);
  
       if (done) {
         return;
       }
-    }
+    } 
   }
-  };
+};
+
 
   return (
     <>
@@ -211,9 +216,11 @@ function App() {
       <button onClick={handleReset}>
             Reset
         </button>
-      <p>
-        {llmResponse}
-      </p>
+        {isLoading ? (
+        <div className="spinner">Loading...</div> // Loading spinner
+        ) : (
+          <p>{llmResponse}</p>
+        )}
       </div>
     </>
   )
