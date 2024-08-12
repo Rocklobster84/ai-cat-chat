@@ -92,7 +92,7 @@ function App() {
 
     setIsLoading(true);
  
-    const url = `https://ai-cat-chat.onrender.com?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
+    const url = `https://ai-cat-chat.onrender.com:3000?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
     const response = await fetch(url);
 
     const reader = response.body
