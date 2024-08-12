@@ -75,7 +75,9 @@ input {
   margin: 0.5em;
   width: 100%;
 }
-
+input#question {
+  width: 80%;
+}
 #ck-button {
     background-color:#2a9d8f;
     border-radius:8px;
@@ -146,5 +148,17 @@ label:checked {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .ck-button {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

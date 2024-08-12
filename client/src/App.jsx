@@ -120,15 +120,14 @@ function App() {
       <h2>Choose a Cat Type:</h2>
       <img src={catImage} alt="Cat" />
       <div className="row">
-      <div id="ck-button" className="ck-button">
+      <div id="ck-button">
         <label>
           <input 
             type="radio" 
             value="black cat"
             checked={catType === 'black cat'}
             onChange={handleCatTypeChange}
-            name="cat"
-          /><span>Black Cat</span>
+            name="cat"/><span>Black</span>
         </label>
       </div>
       <div id="ck-button">
@@ -138,7 +137,8 @@ function App() {
             value="siamese cat"
             checked={catType === 'siamese cat'}
             onChange={handleCatTypeChange}
-            name="cat"/><span>Siamese Cat</span>
+            name="cat"
+          /><span>Siamese</span>
         </label>
       </div>
       <div id="ck-button">
@@ -148,7 +148,7 @@ function App() {
             value="calico cat"
             checked={catType === 'calico cat'}
             onChange={handleCatTypeChange}
-            name="cat" /><span>Calico Cat</span>
+            name="cat" /><span>Calico</span>
         </label>
       </div>
       <div id="ck-button">
@@ -158,7 +158,7 @@ function App() {
             value="maine coon cat"
             checked={catType === 'maine coon cat'}
             onChange={handleCatTypeChange}
-            name="cat"/><span>Maine Coon Cat</span>
+            name="cat"/><span>Maine Coon</span>
         </label>
       </div>
       <div id="ck-button">
@@ -168,7 +168,7 @@ function App() {
             value="orange cat"
             checked={catType === 'orange cat'}
             onChange={handleCatTypeChange}
-            name="cat"/><span>Orange Cat</span>
+            name="cat"/><span>Orange</span>
         </label>
       </div>
       <div id="ck-button">
@@ -178,7 +178,7 @@ function App() {
             value="persian cat"
             checked={catType === 'persian cat'}
             onChange={handleCatTypeChange}
-            name="cat"/><span>Persian Cat</span>
+            name="cat"/><span>Persian</span>
         </label>
       </div>
       <div id="ck-button">
@@ -188,7 +188,7 @@ function App() {
             value="tabby cat"
             checked={catType === 'tabby cat'}
             onChange={handleCatTypeChange}
-            name="cat"/><span>Grey Tabby Cat</span>
+            name="cat"/><span>Grey Tabby</span>
         </label>
       </div>
       <div id="ck-button">
@@ -198,7 +198,7 @@ function App() {
             value="tortoise shell cat"
             checked={catType === 'tortoise shell cat'}
             onChange={handleCatTypeChange} 
-            name="cat"/><span>Torti Cat</span>
+            name="cat"/><span>Torti</span>
         </label>
       </div>
       </div>
@@ -207,7 +207,7 @@ function App() {
         "Meow, ask me a question."
       </h2>
       <p>
-        <input id="question" name="question" required size="30" value={question} onChange={handleQuestionChange}/>
+        <input id="question" name="question" required size="20" value={question} onChange={handleQuestionChange}/>
       </p>
       {errorMessage && <h3 className="error">{errorMessage}</h3>}
       <button onClick={fetchData}>
