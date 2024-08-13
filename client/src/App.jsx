@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Footer from './Footer'
 
 function App() {
   const [llmResponse, setLlmResponse] = useState('');
@@ -232,6 +233,7 @@ function App() {
           <p>{llmResponse}</p>
         )}
         </div>
+        <Footer />
       </div>
     </>
   )
