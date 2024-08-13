@@ -94,10 +94,16 @@ input#question {
     justify-content: center;
     border: 1px solid #2a9d8f;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     position: relative;
 }
+#ck-button input[type="radio"] {
+  display: none;
+}
 
+#ck-button input[type="radio"]:checked + span {
+  background-color: #e76f51;
+  color: white;
+}
 #ck-button label span {
     text-align:center;
     padding:0px 0px;
