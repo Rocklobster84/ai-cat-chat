@@ -101,8 +101,9 @@ function App() {
     else {
 
     setIsLoading(true);
+    const apiURL = import.meta.env.VITE_API_URL;
  
-    const url = `https://ai-cat-chat.onrender.com/?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
+    const url = `${apiURL}?catType=${encodeURIComponent(catType)}&question=${encodeURIComponent(question)}`;
     const response = await fetch(url);
 
     const reader = response.body
