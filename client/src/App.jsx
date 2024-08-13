@@ -126,7 +126,8 @@ function App() {
   return (
     <>
       <h1>AI Cat Chat</h1>
-      <p>Welcome to Cat Chat. Your friendly AI cat ready to answer all of your questions.</p>
+      <h3>Welcome to Cat Chat. Your friendly AI cat ready to answer all of your questions.</h3>
+      <p>Once you choose a type of cat the responses given will be from the perspective of that type of cat.</p>
       <div className="card">
       <h2>Choose a Cat Type:</h2>
       <img src={catImage} alt="Cat" />
@@ -234,6 +235,11 @@ function App() {
           <p>{llmResponse}</p>
         )}
         </div>
+        < br />
+        <br />
+        <br />
+        <p>*Based on <i>The Busy Developer's Guide to Gen AI</i> by <a href="https://www.linkedin.com/in/jorshalick/" target="_blank">Jacob Orshalick</a>, this chat bot uses the RAG (Retrieval Augmented Generation) technique.
+        Back-end is a simple Node.js/Express app, front-end is a React app. <a href="https://js.langchain.com/v0.2/docs/introduction/" target="_blank">LangChain</a> is a framework used to integrate with the LLM and build a Vector Store with <a href="https://js.langchain.com/v0.2/docs/integrations/vectorstores/hnswlib/" target="_blank">HNSWLib</a>, LLM responses are powered by <a href="https://openai.com/" target="_blank">OpenAI</a>.</p>
         <Footer />
       </div>
     </>

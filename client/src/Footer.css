@@ -17,3 +17,7 @@
   text-decoration: none;
   color: #2a9d8f;
 }
+
+.footer a:hover {
+  color: #e76f51;
+}
