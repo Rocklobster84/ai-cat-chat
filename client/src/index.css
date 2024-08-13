@@ -95,6 +95,7 @@ input#question {
     border: 1px solid #2a9d8f;
     cursor: pointer;
     position: relative;
+    white-space: nowrap;
 }
 #ck-button input[type="radio"] {
   display: none;
@@ -110,19 +111,7 @@ input#question {
     display:block;
 }
 
-#ck-button label input {
-    position:absolute;
-    top:-20px;
-    left: -9999px;
-}
-#ck-button:checked {
-  background-color: #e76f51;
-  width: 100%;
-}
-#ck-button input:checked {
-  background-color: #e76f51;
-  width: 100%;
-}
+
 #ck-button input:checked + label {
   background-color:#e76f51;
   color:#fff;
@@ -137,9 +126,7 @@ input#question {
 #ck-button:hover {
     background:#e76f51;
 }
-label:checked {
-  background-color: #e76f51;
-}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -161,13 +148,15 @@ label:checked {
 @media (max-width: 600px) {
   .row {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    flex-wrap: wrap;
   }
 
   .ck-button {
-    width: 100%;
+    flex: 50%;
     margin-bottom: 10px;
+  }
+  #ck-button label {
+    font-size: 0.3em;
   }
   .input#question {
     width: 40%;
