@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+  h1.intro-head {
+    font-size: 1.7em;
+  }
+  h3.intro-sub {
+    font-size: 0.8em;
+  }
+  .intro-para {
+    font-size: 0.6em;
+  }
+}
