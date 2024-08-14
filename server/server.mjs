@@ -1,5 +1,4 @@
 import express from 'express';
-import http from 'http';
 import url from 'url';
 import { HNSWLib } from '@langchain/community/vectorstores/hnswlib';
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
