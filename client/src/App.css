@@ -14,15 +14,3 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-.ck-button {
-  flex: 1 1 45%; /* Adjust the width to fit two columns */
-  margin: 5px;
-}
-.ck-button label {
-  display: flex;
-  align-items: center;
-}
-.ck-button input {
-  margin-right: 10px;
-}

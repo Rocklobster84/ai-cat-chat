@@ -4,13 +4,15 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgb(255, 255, 255);
   background-color: #264653;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --form-control-color: #2a9d8f;
 }
 
 a {
@@ -32,10 +34,6 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin-bottom: 0;
-}
-
-h2 {
-  margin-top: 50px;
 }
 
 img {
@@ -77,54 +75,8 @@ input {
   margin: 0.5em;
   width: 100%;
 }
-input#question {
+input {
   width: 80%;
-}
-#ck-button {
-    background-color:#2a9d8f;
-    border-radius:8px;
-    overflow:hidden;
-    width: 20%;
-    display: inline-block;
-}
-
-#ck-button label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #2a9d8f;
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-}
-#ck-button input[type="radio"] {
-  display: none;
-}
-
-#ck-button input[type="radio"]:checked + span {
-  background-color: #e76f51;
-  color: white;
-}
-#ck-button label span {
-    text-align:center;
-    padding:0px 0px;
-    display:block;
-}
-
-
-#ck-button input:checked + label {
-  background-color:#e76f51;
-  color:#fff;
-  width: 100%;
-}
-#ck-button input:checked + span {
-  background-color:#e76f51;
-  color:#fff;
-  width: 100%;
-  border-radius: 8px;
-}
-#ck-button:hover {
-    background:#e76f51;
 }
 
 .row {
@@ -138,14 +90,6 @@ input#question {
   .row {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .ck-button {
-    flex: 50%;
-    margin-bottom: 10px;
-  }
-  #ck-button label {
-    font-size: 0.7em;
   }
   .input#question {
     width: 40%;

@@ -1,0 +1,54 @@
+.cat-head {
+  font-size: 1.5em;
+  padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .cat-head {
+    font-size: 1.2em;
+    padding-top: 20px;
+  }
+  #ck-button {
+    flex: 50%;
+    margin-bottom: 10px;
+  }
+  #ck-button label {
+    font-size: 0.7em;
+  }
+}
+/*
+#ck-button {
+  background-color: #2a9d8f;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 20%;
+  display: inline-block;
+}
+
+#ck-button label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2a9d8f;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+} 
+
+#ck-button input:checked {
+  background-color: #e76f51;
+}
+#ck-button input[type=radio] {
+  display: none;
+}
+
+#ck-button label span {
+  text-align: center;
+  padding: 0;
+  display: block;
+}
+
+#ck-button:hover {
+  background:#e76f51;
+}
+  */
