@@ -1,0 +1,12 @@
+.question-head {
+  font-size: 1.5em;
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .question-head {
+    font-size: 1.2em;
+    padding-top: 20px;
+  }
+}

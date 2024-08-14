@@ -1,6 +1,7 @@
 .cat-head {
   font-size: 1.5em;
   padding-top: 20px;
+  margin-bottom: 0;
 }
 
 @media (max-width: 600px) {
@@ -9,18 +10,18 @@
     padding-top: 20px;
   }
   #ck-button {
-    flex: 50%;
+    flex: 40%;
     margin-bottom: 10px;
   }
   #ck-button label {
     font-size: 0.7em;
   }
 }
-/*
+
 #ck-button {
-  background-color: #2a9d8f;
-  border-radius: 8px;
-  overflow: hidden;
+  background-color:#2a9d8f;
+  border-radius:8px;
+  overflow:hidden;
   width: 20%;
   display: inline-block;
 }
@@ -33,22 +34,33 @@
   cursor: pointer;
   position: relative;
   white-space: nowrap;
-} 
-
-#ck-button input:checked {
-  background-color: #e76f51;
 }
-#ck-button input[type=radio] {
+#ck-button input[type="radio"] {
   display: none;
 }
 
-#ck-button label span {
-  text-align: center;
-  padding: 0;
-  display: block;
+#ck-button input[type="radio"]:checked + span {
+  background-color: #e76f51;
+color: white;
 }
 
+#ck-button label span {
+  text-align:center;
+  padding:0px 0px;
+  display:block;
+}
+
+#ck-button input:checked + label {
+  background-color:#e76f51;
+  color:#fff;
+  width: 100%;
+}
+#ck-button input:checked + span {
+background-color:#e76f51;
+color:#fff;
+width: 100%;
+border-radius: 8px;
+}
 #ck-button:hover {
   background:#e76f51;
 }
-  */

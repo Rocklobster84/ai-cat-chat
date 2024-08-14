@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import './CatChoice.css'
 
 const CatButtons = ({selectedCat, setSelectedCat, catImage, setCatImage}) => {
@@ -60,6 +59,7 @@ const CatButtons = ({selectedCat, setSelectedCat, catImage, setCatImage}) => {
             <div id="ck-button">
               <label for={cat.category} key={cat.id}>
                 <input 
+                  id={cat.category}
                   type="radio" 
                   value={cat.category}
                   checked={selectedCat === cat.category}

@@ -3,6 +3,7 @@ import './App.css'
 import Intro from './components/Intro/Intro'
 import CatHeader from './components/CatChoice/CatHeader'
 import CatButtons from './components/CatChoice/CatButtons'
+import Question from './components/Question/Question'
 import Footer from './components/Footer/Footer'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCat, setSelectedCat] = useState('');
   const [catImage, setCatImage] = useState('/orange-cat.png');
+  const [catID, setCatID] = useState('');
 
   useEffect(() => {
     if (llmResponse) {
@@ -60,6 +62,8 @@ function App() {
   };
 
   const fetchData = async () => {
+    console.log(`The selected cat is ${selectedCat}`)
+  
     if (!validateCatSelection()) {
       console.log('Form submitted with cat type:', selectedCat);
     } 
@@ -72,8 +76,9 @@ function App() {
     const apiURL = import.meta.env.VITE_API_URL;
  
     const url = `${apiURL}?selectedCat=${encodeURIComponent(selectedCat)}&question=${encodeURIComponent(question)}`;
+    
     const response = await fetch(url);
-
+    console.log(response);
     const reader = response.body
       .pipeThrough(new TextDecoderStream())
       .getReader();
@@ -96,16 +101,20 @@ function App() {
       <Intro />
       <div className="card">
         <CatHeader />
-        <CatButtons selectedCat={selectedCat} setSelectedCat={setSelectedCat} catImage={catImage} setCatImage={setCatImage}/>  
+        <CatButtons 
+          selectedCat={selectedCat} 
+          setSelectedCat={setSelectedCat} 
+          catImage={catImage} 
+          setCatImage={setCatImage}
+        />  
+        <Question 
+          question={question} 
+          setQuestion={setQuestion} 
+          errorMessage={errorMessage} setErrorMessage={setErrorMessage}
+        />
       </div>
        
-      <h2>
-        "Meow, ask me a question."
-      </h2>
-      <p>
-        <input id="question" name="question" required size="20" value={question} onChange={handleQuestionChange}/>
-      </p>
-      {errorMessage && <h3 className="error">{errorMessage}</h3>}
+     
       <button onClick={fetchData}>
           Submit
       </button>

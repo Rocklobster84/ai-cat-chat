@@ -24,7 +24,7 @@ const retriever = loadedVectorStore.asRetriever(1);
 
 app.get('/', async (request, response) => {
   const queryObject = url.parse(request.url, true).query;
-  const catType = queryObject.catType;
+  const selectedCat = queryObject.selectedCat;
   const question = queryObject.question;
   const prompt = ChatPromptTemplate.fromMessages([
     [
@@ -41,7 +41,7 @@ app.get('/', async (request, response) => {
       'answers from a cats perspective ' +
       'and incorporate some cat personality.' +
       'Each type of cat should have unique responses.' +
-      'Remember to keept it light and fun.' +
+      'Remember to keep it light and fun.' +
       'Please do not say anything that could be offensive.'
     ],
     ['human', '{question}']
@@ -64,7 +64,7 @@ app.get('/', async (request, response) => {
     .pipe(outputParser);
   
   const stream = await chain.stream(
-    `From the perspective of a ${catType}, can you tell me ${question}?`
+    `From the perspective of a ${selectedCat}, can you tell me ${question}?`
   );
 
   for await (const chunk of stream) {
