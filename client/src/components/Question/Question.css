@@ -21,8 +21,8 @@
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #2a9d8f;
-  color: white;
+  background-color: #42F1DD;
+  color: #264653;
   cursor: pointer;
   transition: border-color 0.25s;
   margin: 0.5em;
@@ -31,6 +31,7 @@
 .button:hover {
   background-color: #e76f51;
   border-color: #f4a261;
+  color: white;
 }
 .button:focus,
 .button:focus-visible {

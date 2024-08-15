@@ -19,18 +19,20 @@
 }
 
 #ck-button {
-  background-color:#2a9d8f;
+  background-color:#42F1DD;
   border-radius:8px;
   overflow:hidden;
   width: 20%;
   display: inline-block;
+  color: #264653;
+  font-weight: 500;
 }
 
 #ck-button label {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #2a9d8f;
+  border: 1px solid #42F1DD;
   cursor: pointer;
   position: relative;
   white-space: nowrap;
@@ -41,7 +43,7 @@
 
 #ck-button input[type="radio"]:checked + span {
   background-color: #e76f51;
-color: white;
+  color: white;
 }
 
 #ck-button label span {
@@ -63,4 +65,5 @@ border-radius: 8px;
 }
 #ck-button:hover {
   background:#e76f51;
+  color: white;
 }
