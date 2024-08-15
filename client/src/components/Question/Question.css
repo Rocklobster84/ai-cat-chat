@@ -9,4 +9,33 @@
     font-size: 1.2em;
     padding-top: 20px;
   }
+  .button {
+    width: 50%;
+  }
+}
+
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #2a9d8f;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 0.5em;
+  width: 30%;
+}
+.button:hover {
+  background-color: #e76f51;
+  border-color: #f4a261;
+}
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.button:visited {
+  text-decoration: none;
 }
