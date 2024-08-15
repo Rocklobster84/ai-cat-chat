@@ -1,0 +1,12 @@
+#outro {
+  text-align: left;
+}
+
+#outro a {
+  text-decoration: none;
+  color: #e76f51;
+}
+
+#outro a:hover {
+  color: white;
+}

@@ -5,6 +5,7 @@ import CatHeader from './components/CatChoice/CatHeader'
 import CatButtons from './components/CatChoice/CatButtons'
 import Question from './components/Question/Question'
 import Response from './components/Response/Response'
+import Outro from './components/Outro/Outro'
 import Footer from './components/Footer/Footer'
 
 function App() {
@@ -55,14 +56,9 @@ function App() {
           llmResponse={llmResponse}
           isLoading={isLoading}  
         />
+        <Outro />
       </div>
-       
-        < br />
-        <br />
-        <br />
-        <p>*Based on <i>The Busy Developer's Guide to Gen AI</i> by <a href="https://www.linkedin.com/in/jorshalick/" target="_blank">Jacob Orshalick</a>, this chat bot uses the RAG (Retrieval Augmented Generation) technique.
-        Back-end is a simple Node.js/Express app, front-end is a React app. <a href="https://js.langchain.com/v0.2/docs/introduction/" target="_blank">LangChain</a> is a framework used to integrate with the LLM and build a Vector Store with <a href="https://js.langchain.com/v0.2/docs/integrations/vectorstores/hnswlib/" target="_blank">HNSWLib</a>, LLM responses are powered by <a href="https://openai.com/" target="_blank">OpenAI</a>.</p>
-        <Footer />
+      <Footer />
     </>
   )
 }
