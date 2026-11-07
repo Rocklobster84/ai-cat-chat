@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 
 const loadedVectorStore = await HNSWLib.load(
-  'data', new OpenAIEmbeddings());
+  'data', new OpenAIEmbeddings({ model: 'text-embedding-ada-002' }));
 
 const retriever = loadedVectorStore.asRetriever(1);
 
@@ -56,7 +56,7 @@ app.get('/', async (request, response) => {
     question: new RunnablePassthrough(),
   });
 
-  const model = new ChatOpenAI({});
+  const model = new ChatOpenAI({ model: 'gpt-6-luna' });
   const outputParser = new StringOutputParser();
 
   const chain = setupAndRetrieval.pipe(prompt)

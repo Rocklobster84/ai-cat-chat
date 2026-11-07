@@ -1,7 +1,7 @@
 import { DirectoryLoader } from 
-  'langchain/document_loaders/fs/directory';
-import { TextLoader } from 
-  'langchain/document_loaders/fs/text';
+  '@langchain/classic/document_loaders/fs/directory';
+import { TextLoader } from
+  '@langchain/classic/document_loaders/fs/text';
 import { HNSWLib } from 
   '@langchain/community/vectorstores/hnswlib';
 import { OpenAIEmbeddings } from 
@@ -15,7 +15,7 @@ const loader = new DirectoryLoader(
 );
 
 const docs = await loader.load();
-const embeddings = new OpenAIEmbeddings();
+const embeddings = new OpenAIEmbeddings({ model: 'text-embedding-ada-002' });
 
 const vectorStore = await HNSWLib.fromDocuments(
   docs, embeddings);
